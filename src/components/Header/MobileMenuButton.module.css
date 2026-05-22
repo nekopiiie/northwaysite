@@ -1,0 +1,25 @@
+.menuBtn {
+  width: fit-content; 
+  height: auto;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent; 
+  padding-bottom: 8px; 
+  font-family: var(--font-heading);
+  font-size: var(--h3-size);
+  font-weight: var(--h3-weight);
+  line-height: var(--h3-line-height);
+  color: var(--color-white);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center; 
+}
+
+.menuBtn:hover {
+  color: var(--color-whitegreen50);
+}
+
+.active {
+  color: var(--color-white);
+  border-bottom: 3px solid var(--color-white);
+}

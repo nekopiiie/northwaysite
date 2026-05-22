@@ -1,0 +1,338 @@
+/* ==========================================
+   ОБЩИЕ СТИЛИ ДЛЯ ВСЕХ КНОПОК
+   ========================================== */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: fit-content; 
+  background-color: transparent;
+  border: 1px solid transparent; /* Прозрачная рамка по умолчанию */
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+  font-family: var(--font-body);
+}
+
+.text {
+  transition: color 0.2s ease;
+}
+
+.icon {
+  max-width: 100%;
+  max-height: 100%;
+  transition: color 0.2s ease;
+  display: block;
+}
+
+/* ==========================================
+   1. STANDARD PRIMARY
+   ========================================== */
+.primary {
+  padding: 4px 4px 4px 20px; 
+  border: 1px solid var(--color-darkgreen); 
+  border-radius: 50px; 
+}
+.primary .text {
+  font-size: var(--h6-size);
+  font-weight: var(--h6-weight);
+  line-height: var(--h6-line-height);
+  color: var(--color-darkgreen);
+}
+.primary .iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 23px;
+  height: 23px;
+  flex-shrink: 0;
+  border: 1px solid var(--color-darkgreen);
+  border-radius: 50%; 
+  transition: all 0.2s ease;
+}
+.primary .icon { width: 40px; height: 40px; color: var(--color-darkgreen); }
+
+.primary:hover { background-color: var(--color-maingreen5); border-color: var(--color-maingreen60); }
+.primary:hover .text { color: var(--color-maingreen60); }
+.primary:hover .iconWrapper { border-color: var(--color-maingreen60); }
+.primary:hover .icon { color: var(--color-maingreen60); }
+
+.primary:active { background-color: var(--color-darkgreen); border-color: var(--color-maingreen60); }
+.primary:active .text { color: var(--color-white); }
+.primary:active .iconWrapper { border-color: var(--color-white); }
+.primary:active .icon { color: var(--color-white); }
+
+
+/* ==========================================
+   2. STANDARD PRIMARY WHITE
+   ========================================== */
+.white {
+  padding: 4px 4px 4px 20px; 
+  border: 1px solid var(--color-white); 
+  border-radius: 50px;
+  background-color: var(--color-maingreen20);
+  backdrop-filter: blur(6px); 
+  -webkit-backdrop-filter: blur(6px); 
+  justify-content: space-between;
+}
+.white .text {
+  font-size: var(--h6-size);
+  font-weight: var(--h6-weight);
+  line-height: var(--h6-line-height);
+  color: var(--color-white);
+}
+.white .iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 23px;
+  height: 23px;
+  flex-shrink: 0;
+  border: 1px solid var(--color-white);
+  border-radius: 50%; 
+  transition: all 0.2s ease;
+}
+.white .icon { width: 40px; height: 40px; color: var(--color-white); }
+
+.white:hover { background-color: var(--color-lightgreen20); border-color: var(--color-white70); }
+.white:hover .text { color: var(--color-white70); }
+.white:hover .iconWrapper { border-color: var(--color-white70); }
+.white:hover .icon { color: var(--color-white70); }
+
+.white:active { background-color: var(--color-white); border-color: var(--color-maingreen10); }
+.white:active .text { color: var(--color-darkgreen); }
+.white:active .iconWrapper { border-color: var(--color-darkgreen); }
+.white:active .icon { color: var(--color-darkgreen); }
+
+
+/* ==========================================
+   3. STANDARD LINK
+   ========================================== */
+.link {
+  gap: 5px; 
+  padding: 0;
+  border: none;
+  border-radius: 0;
+}
+.link .text {
+  font-size: var(--body3-size);
+  font-weight: var(--body3-weight);
+  line-height: var(--body3-line-height);
+  color: var(--color-maingreen60);
+}
+.link .icon {
+  width: 16px; 
+  height: 16px;
+  color: var(--color-maingreen60);
+}
+
+.link:hover .text, .link:active .text { color: var(--color-maingreen90); }
+.link:hover .icon, .link:active .icon { color: var(--color-maingreen90); }
+
+
+/* ==========================================
+   4. STANDARD TEXT
+   ========================================== */
+.textVariant {
+  gap: 0;
+  padding: 4px 10px; 
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid transparent; 
+}
+.textVariant .text {
+  font-size: var(--body3-size);
+  font-weight: var(--body3-weight);
+  line-height: var(--body3-line-height);
+  color: var(--color-maingreen35);
+}
+
+.textVariant:hover .text { color: var(--color-maingreen60); }
+
+.textVariant:active .text { color: var(--color-darkgreen); }
+.textVariant:active { border-bottom: 1px solid var(--color-darkgreen); } /* Появляется полоса */
+
+/* ==========================================
+   5. ALTERNATIVE PRIMARY
+   ========================================== */
+.alternativePrimary {
+  padding: 4px 20px; 
+  border: 1px solid var(--color-darkgreen); 
+  border-radius: 50px; 
+}
+.alternativePrimary .text {
+  font-size: var(--body5-size);
+  font-weight: var(--body5-weight);
+  line-height: var(--body5-line-height);
+  color: var(--color-darkgreen);
+}
+.alternativePrimary:hover { background-color: var(--color-maingreen5); border-color: var(--color-maingreen60); }
+.alternativePrimary:hover .text { color: var(--color-maingreen60); }
+.alternativePrimary:active { background-color: var(--color-darkgreen); border-color: var(--color-maingreen60); }
+.alternativePrimary:active .text { color: var(--color-white); }
+
+
+/* ==========================================
+   6. ALTERNATIVE PRIMARY WHITE
+   ========================================== */
+.alternativeWhite {
+  padding: 4px 20px; 
+  border: 1px solid var(--color-white); 
+  border-radius: 50px;
+  background-color: var(--color-maingreen20);
+  backdrop-filter: blur(6px); 
+  -webkit-backdrop-filter: blur(6px); 
+}
+.alternativeWhite .text {
+  font-size: var(--body5-size);
+  font-weight: var(--body5-weight);
+  line-height: var(--body5-line-height);
+  color: var(--color-white);
+}
+.alternativeWhite:hover { background-color: var(--color-lightgreen20); border-color: var(--color-white70); }
+.alternativeWhite:hover .text { color: var(--color-white70); }
+.alternativeWhite:active { background-color: var(--color-white); }
+.alternativeWhite:active .text { color: var(--color-darkgreen); }
+
+
+/* ==========================================
+   7. ALTERNATIVE LINK
+   ========================================== */
+.alternativeLink {
+  gap: 5px;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+}
+.alternativeLink .text {
+  font-size: var(--body5-size);
+  font-weight: var(--body5-weight);
+  line-height: var(--body5-line-height);
+  color: var(--color-white);
+}
+.alternativeLink:hover .text, .alternativeLink:active .text { color: var(--color-whitegreen50); }
+
+
+/* ==========================================
+   8. ALTERNATIVE TEXT
+   ========================================== */
+.alternativeText {
+  gap: 0;
+  padding: 4px 10px;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid transparent;
+}
+.alternativeText .text {
+  font-size: var(--body3-size);
+  font-weight: var(--body3-weight);
+  line-height: var(--body3-line-height);
+  color: var(--color-maingreen90);
+}
+.alternativeText:hover .text { color: var(--color-khaki); }
+
+
+/* ==========================================
+   9. CIRCLE PRIMARY
+   ========================================== */
+.circlePrimary {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  background-color: var(--color-white);
+}
+.circlePrimary .icon {
+  width: 14px;
+  height: 14px;
+  color: var(--color-darkgreen);
+}
+.circlePrimary:hover { 
+  background-color: var(--color-whitegreen50);
+  border: 0.5px solid var(--color-maingreen5); 
+}
+.circlePrimary:hover .icon { color: var(--color-white); }
+
+
+/* ==========================================
+   10. WITH ICON PRIMARY
+   ========================================== */
+.withIconPrimary {
+  padding: 4px 16px;
+  gap: 10px;
+  border: 1px solid transparent;
+  border-radius: 50px; 
+  background-color: var(--color-white);
+}
+.withIconPrimary .icon {
+  width: 16px;
+  height: 16px;
+  color: var(--color-darkgreen);
+}
+.withIconPrimary .text {
+  font-size: var(--body5-size);
+  font-weight: var(--body5-weight);
+  line-height: var(--body5-line-height);
+  color: var(--color-darkgreen);
+}
+.withIconPrimary:hover { 
+  background-color: var(--color-white70); 
+  box-shadow: 0 0px 4px rgba(242, 242, 242, 0.8); /* blur 6, color light gray */
+}
+.withIconPrimary:hover .icon, .withIconPrimary:hover .text { color: var(--color-white); }
+
+
+/* ==========================================
+   11. WITH ICON SECONDARY
+   ========================================== */
+.withIconSecondary {
+  padding: 4px 16px;
+  gap: 10px;
+  border: 1px solid transparent;
+  border-radius: 50px;
+  background-color: var(--color-darkgreen);
+}
+.withIconSecondary .icon {
+  width: 16px;
+  height: 16px;
+  color: var(--color-white);
+}
+.withIconSecondary .text {
+  font-size: var(--body5-size);
+  font-weight: var(--body5-weight);
+  line-height: var(--body5-line-height);
+  color: var(--color-white);
+}
+.withIconSecondary:hover { 
+  background-color: var(--color-maingreen60); 
+  box-shadow: 0 0px 4px rgba(29, 35, 30, 0.2); /* blur 6, color main green 20 */
+}
+.withIconSecondary:hover .icon, .withIconSecondary:hover .text { color: var(--color-white70); }
+
+/* ==========================================
+   12. CIRCLE CLOSE (Крестик)
+   ========================================== */
+.circleClose {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  background-color: transparent;
+  position: relative;
+}
+.circleClose .icon {
+  width: 14px;
+  height: 14px;
+  color: var(--color-maingreen60);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.circleClose:hover { 
+  background-color: var(--color-white);
+  border: 1px solid var(--color-maingreen35);
+}

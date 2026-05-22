@@ -1,0 +1,93 @@
+.container {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  height: 40px;
+  width: fit-content;
+  padding: 0 8px; /* Чуть-чуть отступов по бокам, чтобы не прилипало */
+  
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.01);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+/* Обычная цифра */
+.item {
+  font-family: var(--font-pagination);
+  font-size: var(--pagination-size);
+  font-weight: var(--pagination-weight);
+  line-height: var(--pagination-line-height);
+  letter-spacing: var(--pagination-letter-spacing);
+  color: var(--color-whitegreen50);
+  user-select: none;
+}
+
+/* Активная цифра */
+.activeItem {
+  font-family: var(--font-pagination);
+  font-size: var(--pagination-size);
+  font-weight: var(--pagination-weight);
+  line-height: var(--pagination-line-height);
+  letter-spacing: var(--pagination-letter-spacing);
+  color: var(--color-white);
+  user-select: none;
+}
+
+/* ЛИНИЯ */
+.line {
+  width: 100px;       
+  height: 3px;        
+  background-color: var(--color-white);
+  border-radius: 3px; 
+  
+  /* ВАЖНО: Точка отрисовки начинается с левого края */
+  transform-origin: left;
+  
+  /* Подключаем анимацию (длительность 0.3 секунды) */
+  animation: drawLine 0.3s ease forwards; 
+}
+
+/* Сама магия анимации */
+@keyframes drawLine {
+  from { transform: scaleX(0); } /* Изначально ширина 0 */
+  to { transform: scaleX(1); }   /* Растягивается до 100% */
+}
+
+/* ==========================================
+   КНОПКИ-СТРЕЛКИ (база из circlePrimary)
+   ========================================== */
+.arrowBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  background-color: var(--color-white);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.arrowBtn:hover:not(:disabled) {
+  background-color: var(--color-whitegreen50);
+  border: 0.5px solid var(--color-maingreen5);
+}
+.arrowBtn:hover:not(:disabled) .arrowIcon {
+  color: var(--color-white);
+}
+
+.arrowIcon {
+  width: 14px;
+  height: 14px;
+  color: var(--color-darkgreen);
+  transition: color 0.2s ease;
+}
+
+/* Отключенная кнопка (на 1-й странице влево нельзя) */
+.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none; /* Отключает даже hover эффект */
+}

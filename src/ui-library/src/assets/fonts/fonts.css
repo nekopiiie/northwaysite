@@ -1,0 +1,50 @@
+/* === COOLVETICA === */
+@font-face {
+  font-family: 'Coolvetica';
+  src: url('./Coolvetica.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* === INVOLVE === */
+@font-face {
+  font-family: 'Involve';
+  src: url('./Involve-Medium.woff2') format('woff2'); 
+  font-weight: 500; /* Medium */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Involve';
+  src: url('./Involve-Bold.woff2') format('woff2'); 
+  font-weight: 700; /* Bold */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Involve';
+  src: url('./Involve-Regular.woff2') format('woff2');
+  font-weight: 400; /* Regular */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Involve';
+  src: url('./Involve-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* === MANROPE === */
+@font-face {
+  font-family: 'Manrope';
+  src: url('./Manrope.woff2') format('woff2');
+  font-weight: 500; /* Semibold */
+  font-style: normal;
+  font-display: swap;
+}

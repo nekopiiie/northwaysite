@@ -1,0 +1,242 @@
+.header, .mobileWrapper, .mobile, .mobileMenu {
+  margin-top: 0 !important; 
+}
+
+
+/* ==========================================
+   БАЗОВЫЕ СТИЛИ И КОНТЕЙНЕР
+   ========================================== */
+.header {
+  width: 100%;
+  margin: 0; padding: 0;
+  background-color: transparent; 
+  position: relative;
+  z-index: 100;
+}
+
+.sticky { position: sticky; top: 0; }
+
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 6px 0px;
+}
+
+/* --- ЦВЕТОВЫЕ ВАРИАНТЫ  --- */
+
+.primary .logoWrapper svg, .primary .logoWrapperMobile svg { 
+  color: var(--color-white) !important; 
+  fill: currentColor !important; 
+}
+.secondary .logoWrapper svg, .secondary .logoWrapperMobile svg { 
+  color: var(--color-darkgreen) !important; 
+  fill: currentColor !important; 
+}
+
+.primary .socialIcon { color: var(--color-white); }
+.secondary .socialIcon { color: var(--color-darkgreen); }
+
+.primary .mobileActions { color: var(--color-white); }
+.secondary .mobileActions { color: var(--color-darkgreen); }
+
+.primary .standalonePhone { color: var(--color-white); }
+.secondary .standalonePhone { color: var(--color-darkgreen); }
+
+.primary .burger { color: var(--color-white); }
+.secondary .burger { color: var(--color-darkgreen); }
+
+.logoWrapper svg {
+  width: 154px;
+  height: 31px;
+}
+
+.logoWrapperMobile svg {
+  width: 105px;
+  height: 20px;
+}
+
+/* ==========================================
+   ДЕСКТОП ВЕРСИЯ
+   ========================================== */
+.desktop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  height: 48px;
+}
+
+/* Скрываем мобильное на десктопе */
+.mobile { display: none; }
+
+.standalonePhone {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 1.5px rgba(29, 35, 30, 0.35)); 
+}
+
+/* --- Навигация --- */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  /* width: 618px; */
+  flex-wrap: nowrap;
+}
+
+/* .nav button { white-space: nowrap; } */
+.nav button { white-space: nowrap; overflow: hidden; }
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 218px;
+  justify-content: flex-end;
+  white-space: nowrap;
+}
+
+/* .phoneWrapper {
+  display: flex;
+  align-items: center;
+  transition: max-width 0.3s ease;
+} */
+
+.socialIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  transition: color 0.2s ease;
+  filter: drop-shadow(0 0 1.5px rgba(29, 35, 30, 0.35)); 
+}
+
+/* ==========================================
+   ПЛАВНАЯ АДАПТАЦИЯ ДЕСКТОПА (Скрываем текст телефона)
+   ========================================== */
+@media (max-width: 1430px) {
+  /* Убиваем старый контейнер с соцсетями и телефоном */
+  .container {
+  padding: 6px 16px;
+}
+
+}
+
+@media (max-width: 1024px) {
+  /* Убиваем старый контейнер с соцсетями и телефоном */
+  .actions {
+    display: none !important;
+    width: 0 !important;
+    overflow: hidden;
+  }
+
+  /* Показываем одиночную иконку телефона */
+  .standalonePhone {
+    display: flex;
+  }
+}
+
+/* ==========================================
+   МОБИЛЬНАЯ ВЕРСИЯ (Срабатывает < 768px)
+   ========================================== */
+@media (max-width: 820px) {
+  .desktop { display: none; }
+  
+  .mobileWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    z-index: 60;
+  }
+
+  .mobile { 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    height: 54px; 
+    padding: 12px 16px; 
+    margin: 0;
+  }
+
+  .mobileActions { display: flex; gap: 6px; align-items: center; }
+
+  .burger { 
+    background: none; 
+    border: none; 
+    cursor: pointer; 
+    padding: 6px;
+    /* color: var(--color-white);  */
+    filter: drop-shadow(0 0 1.5px rgba(29, 35, 30, 0.35));
+  }
+ 
+
+  /* --- Само меню --- */
+  .mobileMenu {
+    width: 100%;
+    background-color: var(--color-darkgreen);
+    padding: 0 24px 96px 24px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    border-radius: 0 0 16px 16px; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 70;
+  }
+
+  .menuTop {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    /* padding: 0 4px 0px 4px;
+    background-color: var(--color-darkgreen); */
+  }
+
+  .menuClose {
+    width: 30px;
+    height: 30px;
+    background: none;
+    border: none;
+    color: var(--color-white);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+   .menuClose svg {
+    width: 30px !important; 
+    height: 30px !important;
+    stroke: currentColor !important;
+    fill: none !important;
+  }
+
+  .menuList {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 100%; 
+    align-items: center;
+  }
+
+    .overlayBg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-maingreen35);
+    z-index: 50; /* ВАЖНО: Ниже мобильного меню, но выше контента сайта */
+  }
+}

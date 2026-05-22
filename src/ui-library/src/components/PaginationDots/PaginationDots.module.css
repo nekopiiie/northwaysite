@@ -1,0 +1,22 @@
+.container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  width: fit-content; /* HUG */
+  height: fit-content; /* HUG */
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%; /* Идеальный круг */
+  background-color: var(--color-maingreen35);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.active {
+  background-color: var(--color-maingreen90);
+  cursor: default; /* Убираем палец на активной */
+}

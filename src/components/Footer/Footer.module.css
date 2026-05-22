@@ -1,0 +1,194 @@
+/* ==========================================
+   ВНЕШНИЙ ФРЕЙМ
+   ========================================== */
+.footer {
+  width: 100%;
+  background-color: var(--color-darkgreen);
+  padding: 40px clamp(16px, 9vw, 130px) 60px clamp(16px, 9vw, 130px);
+  box-sizing: border-box;
+  border-radius: 20px 20px 0 0; /* Скругление только сверху */
+}
+
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* Цвета лого */
+.logoWrapper svg { color: var(--color-white); }
+
+
+/* ==========================================
+   ВЕРХНЯЯ СТРОКА
+   ========================================== */
+.topRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* GAP AUTO */
+  height: 46px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--color-whitegreen50); /* Линия */
+}
+
+.contacts {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 36px;
+}
+
+/* Иконки соцсетей (скопировали стили из хедера) */
+.socialIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: var(--color-white);
+  filter: drop-shadow(0 0 1.5px rgba(29, 35, 30, 0.35)); 
+}
+.socialIcon svg { width: 20px; height: 20px; }
+
+
+/* ==========================================
+   НИЖНЯЯ СТРОКА
+   ========================================== */
+.bottomRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* GAP AUTO */
+  height: 37px;
+}
+
+.copyrightWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: -1px; /* Figma хитрость, в CSS делаем через margin */
+}
+
+.address {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--body5-size);
+  font-weight: var(--body5-weight);
+  line-height: var(--body5-line-height);
+  color: var(--color-white);
+}
+
+.copyright {
+  margin: -2px 0 0 0; /* Реализация gap -1px */
+  font-family: var(--font-body);
+  font-size: var(--body3-size);
+  font-weight: var(--body3-weight);
+  line-height: var(--body3-line-height);
+  color: var(--color-white70);
+}
+
+.navWrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 30px;
+}
+
+.navWrapper button {
+  white-space: nowrap;
+}
+
+/* ==========================================
+   ЛОКАЛЬНОЕ ИЗМЕНЕНИЕ КНОПКИ 
+   ========================================== */
+.circleBtn {
+  width: 30px !important;  /* Меняем размер фрейма */
+  height: 30px !important;
+  flex-shrink: 0 !important;
+}
+.circleBtn svg {
+  width: 14px; /* Меняем размер иконки внутри */
+  height: 14px;
+}
+
+/* ==========================================
+   при 992 я угараю
+   ========================================== */
+@media (max-width: 992px) {
+
+  .bottomRow {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: auto;
+    gap: 18px;
+  }
+
+  .navWrapper {
+    order: 1;
+    height: auto;
+    flex-wrap: wrap;
+  }
+
+  .copyrightWrapper {
+    order: 2;
+  }
+  .circleBtn {
+    display: none !important;
+  }
+}
+
+/* ==========================================
+   МОБИЛЬНАЯ ВЕРСИЯ
+   ========================================== */
+@media (max-width: 768px) {
+    .container {
+    gap: 32px;
+  }
+  
+  .footer {
+    max-width: 100%;
+    padding: 40px 16px 48px 16px;
+    gap: 32px;
+    border-radius: 16px 16px 0 0; 
+  }
+
+  .topRow {
+    flex-direction: column;
+    height: auto;
+    align-items: flex-start;
+    gap: 4px;
+    padding-bottom: 10px;
+  }
+
+  .logoWrapper svg {
+    width: 105px;
+    height: 20px;
+  }
+
+  .bottomRow {
+    flex-direction: column;
+    height: auto;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .navWrapper {
+    order: -1; 
+    flex-direction: column; 
+    flex-wrap: nowrap; 
+    height: auto;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .copyrightWrapper {
+    order: 1; 
+  }
+
+  /* ПРИНУДИТЕЛЬНОЕ УДАЛЕНИЕ */
+  .circleBtn {
+    display: none !important;
+  }
+}

@@ -1,0 +1,88 @@
+.textBox {
+  width: 380px;
+  height: fit-content; 
+  padding: 20px;
+  gap: 24px;
+  background-color: var(--color-lightgray);
+  border-radius: 14px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  align-items: left;
+  gap: 14px;
+  flex-direction: column;
+}
+
+/* Фрейм для иконки (48x48, padding 6 -> иконка внутри 36x36) */
+.iconWrapper {
+  width: 48px;
+  height: 48px;
+  padding: 6px;
+  box-sizing: border-box;
+  background-color: var(--color-maingreen60);
+  border-radius: 50px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.iconWrapper svg {
+  width: 36px;
+  height: 36px;
+  color: var(--color-white);
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--h6-size);
+  font-weight: var(--h6-weight);
+  line-height: var(--h6-line-height);
+  color: var(--color-maingreen);
+}
+
+.description {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--body3-size);
+  font-weight: var(--body3-weight);
+  line-height: var(--body3-line-height);
+  color: var(--color-maingreen90);
+}
+
+/* ==========================================
+   МОБИЛЬНАЯ ВЕРСИЯ 
+   ========================================== */
+@media (max-width: 768px) {
+  .textBox {
+    width: 100%;
+    padding: 16px; 
+  }
+
+  .header {
+    gap: 14px; 
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .iconWrapper {
+    width: 42px; 
+    height: 42px;
+  }
+
+  .iconWrapper svg {
+    width: 30px; 
+    height: 30px;
+  }
+
+  .title {
+    font-size: var(--body5-size);
+    font-weight: var(--body5-weight);
+    line-height: var(--body5-line-height);
+  }
+}

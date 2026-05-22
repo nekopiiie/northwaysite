@@ -1,0 +1,47 @@
+.input {
+  /* Размеры: fill 200 означает, что оно растягивается, но минимум 200px */
+  width: 100%;
+  min-width: 200px;
+  height: 32px;
+  
+  padding: 8px 10px 8px 18px; /* top right bottom left */
+  
+  font-family: var(--font-body);
+  font-size: var(--input-size);
+  font-weight: var(--input-weight);
+  line-height: var(--input-line-height);
+  color: var(--color-maingreen35);
+  
+  background-color: transparent;
+  border: 1px solid var(--color-maingreen35);
+  border-radius: 50px;
+  
+  box-sizing: border-box;
+  outline: none; /* Убираем стандартный синий контур браузера */
+  transition: all 0.2s ease;
+}
+
+/* Стиль для текста-подсказки (placeholder) */
+.input::placeholder {
+  color: var(--color-maingreen35);
+}
+
+/* ==========================================
+   СОСТОЯНИЕ HOVER
+   ========================================== */
+.input:hover {
+  box-shadow: 0 0px 4px rgba(29, 35, 30, 0.35); 
+}
+
+/* ==========================================
+   СОСТОЯНИЕ FOCUS (Активное написание)
+   ========================================== */
+.input:focus {
+  border-color: var(--color-maingreen60);
+  color: var(--color-maingreen60);
+}
+
+.input:not(:placeholder-shown) {
+  color: var(--color-maingreen60);
+}
+

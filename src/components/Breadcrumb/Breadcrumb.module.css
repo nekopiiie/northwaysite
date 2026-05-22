@@ -1,0 +1,50 @@
+.container {
+  display: inline-flex;
+  align-items: center;
+  
+  gap: 10px;
+  padding: 1px 5px 1px 20px;
+  width: fit-content;
+  height: 22px;
+}
+
+/* Стили для каждого элемента (как у standard link) */
+.item {
+  font-family: var(--font-body);
+  font-size: var(--body3-size);
+  font-weight: var(--body3-weight);
+  line-height: var(--body3-line-height);
+  color: var(--color-maingreen60);
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.item:hover {
+  color: var(--color-maingreen90);
+}
+
+/* Стили для последнего (текущего) элемента */
+.active {
+  color: var(--color-maingreen90); /* Делаем его темным сразу */
+  cursor: default; /* Убираем пальчик при наведении */
+}
+.active:hover {
+  color: var(--color-maingreen90); /* Отменяем hover эффект */
+}
+
+/* Обертка для иконки */
+.iconWrapper {
+  display: flex;
+  align-items: center;
+}
+
+/* САМАЯ МАГИЯ: ПЕРЕВОРАЧИВАЕМ СТРЕЛКУ */
+.icon {
+  width: 12px;
+  height: 12px;
+  color: var(--color-maingreen60);
+  transform: rotate(90deg); /* Поворачиваем на 90 градусов! */
+}
