@@ -1,101 +1,115 @@
 /* ==========================================
-   ДЕСКТОП ВЕРСИЯ
+   ДЕСКТОП
    ========================================== */
-.section {
-  padding: 64px clamp(16px, 9vw, 130px) 52px;
+.wrapper {
+  width: 100%;
+  /* 130 по бокам, 32 сверху, 10 снизу */
+  padding: 32px clamp(16px, 9vw, 130px) 10px; 
+  box-sizing: border-box;
 }
 
 .container {
   max-width: 1180px;
   margin: 0 auto;
-  min-height: 445px;
+  padding: 24px 0;
+  display: flex;
+  flex-direction: row; /* Элементы друг за другом */
+  gap: 320px; /* Большой отступ между ними */
+  align-items: flex-start;
+}
+
+/* --- Блок автора --- */
+.authorBlock {
+  display: flex;
+  align-items: left;
+  gap: 15px;
+  flex-shrink: 0; /* Чтобы блок не сжимался */
+  flex-direction: column;
+}
+
+.avatar {
+  width: 60px; /* Размер аватарки (поменяй, если в макете другой) */
+  height: 60px;
+  border-radius: 50%; /* Делаем круглым */
+  object-fit: cover; /* Обрезаем фото в круг */
+}
+
+.authorInfo {
   display: flex;
   flex-direction: column;
-  gap: 64px;
+  gap: 1px;
 }
 
-/* --- Текстовый блок --- */
-.textContainer {
-  max-width: 1180px;
-  display: flex;
-  flex-direction: row; /* ИЗМЕНИЛИ НА ROW - теперь в линию! */
-  align-items: center; /* Выравниваем по центру по вертикали */
-  justify-content: space-between; 
-}
-
-.heading {
+.name {
   margin: 0;
   font-family: var(--font-heading);
-  font-size: var(--h2-size);
-  font-weight: var(--h2-weight);
-  line-height: var(--h2-line-height);
-  color: var(--color-maingreen);
-  max-width: 332px; /* Ограничиваем ширину заголовка */
-  flex-shrink: 0; /* Чтобы текст не давил на заголовок */
+  font-size: var(--h5-size);
+  font-weight: var(--h5-weight);
+  line-height: var(--h5-line-height);
+  color: var(--color-darkgreen);
 }
 
-.subtitle {
+.role {
   margin: 0;
   font-family: var(--font-body);
-  font-size: var(--body3-size);
-  font-weight: var(--body3-weight);
-  line-height: var(--body3-line-height);
-  color: var(--color-maingreen90);
-  max-width: 580px;
+  font-size: var(--body1-size);
+  font-weight: var(--body1-weight);
+  line-height: var(--body1-line-height);
+  color: var(--color-maingreen60);
 }
 
-/* --- Блок с карточками --- */
-.cardsContainer {
+/* --- Блок текста --- */
+.textBlock {
   display: flex;
-  gap: 20px;
+  gap: 15px;
+  flex-direction: column;
 }
 
+.iconPlaceholder, .icon {
+  width: 36px;
+  height: 36px;
+  color: var(--color-khaki);
+  flex-shrink: 0;
+  margin-top: 2px; /* Чуть опускаем, чтобы ровно смотрелось с текстом */
+}
 
-@media (max-width: 1115px) {
-    .textContainer {
-        gap: 32px;
-    }
+.text {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--body1-size);
+  font-weight: var(--body1-weight);
+  line-height: var(--body1-line-height);
+  color: var(--color-darkgreen);
+}
+
+/* ВЫДЕЛЕННЫЕ СЛОВА */
+.highlight {
+  color: var(--color-khaki);
+  font-weight: var(--body2-weight); /* Bold */
+}
+
+@media (max-width: 1024px) {
+  .container {
+    /* flex-direction: column; */
+    gap: 64pt;
+  }
 }
 
 /* ==========================================
-   МОБИЛЬНАЯ ВЕРСИЯ (Твои точные цифры)
+   МОБИЛЬНАЯ ВЕРСИЯ
    ========================================== */
 @media (max-width: 768px) {
-  .section {
-    /* Сверху/снизу 32, по бокам 16 */
-    padding: 32px 8px; 
-    gap: 32px;
+  .wrapper {
+    padding: 24px 16px 12px; /* top 24, bottom 12, по бокам 16 */
   }
 
   .container {
-    min-height: auto;
-    gap: 32px; /* Gap секции */
-  }
-
-  .textContainer {
-    flex-direction: column; /* друг под другом */
-    align-items: flex-start;
+    flex-direction: column; /* Элементы друг ПОД другом */
     gap: 24px;
-    padding: 0 16px; /* Отступы внутри контейнера */
   }
 
-  .heading {
-    max-width: 100%;
-    font-size: var(--h3-size);
-    font-weight: var(--h3-weight);
-    line-height: var(--h3-line-height);
+  .authorBlock {
+    width: 100%;
+    justify-content: center; /* Можно отцентрировать или оставить слева (justify-content: flex-start) */
   }
-
-  .subtitle {
-    max-width: 100%;
-  }
-
-  /* Контейнер с карточками */
-  .cardsContainer {
-    flex-direction: column;
-    align-items: center;
-    gap: 16px; /* Gap карточек */
-    padding: 0 8px; /* Отступы внутри контейнера */
-  }
-
 }

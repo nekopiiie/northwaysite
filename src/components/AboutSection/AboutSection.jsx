@@ -1,45 +1,33 @@
 import React from 'react';
 import styles from './AboutSection.module.css';
-import TextBox from '../TextBox/TextBox';
 
-// Импортируем локальные иконки (путь поправишь, когда сохранишь файлы)
-import { ReactComponent as KittyIcon } from '../../assets/icons/Kitty.svg';
-import { ReactComponent as HeartIcon } from '../../assets/icons/Heart.svg';
-import { ReactComponent as PawIcon } from '../../assets/icons/Paw.svg';
+
+import Avatar from '../../assets/images/avatars/avatarperson.jpg';
+import { ReactComponent as ColonIcon } from '../../assets/icons/Colon.svg';
 
 const AboutSection = () => {
   return (
-    <section className={styles.section}>
+    <section className={styles.wrapper}>
       <div className={styles.container}>
         
-        {/* Контейнер 1: Тексты */}
-        <div className={styles.textContainer}>
-          <h2 className={styles.heading}>
-            Легенда Севера<br />у вас дома
-          </h2>
-          <p className={styles.subtitle}>
-            Норвежская лесная кошка (скогкат) — легендарная порода с суровой северной красотой. 
-            Веками эти независимые и преданные кошки жили рядом с викингами. Узнайте, почему их любят во всем мире.
-          </p>
+        {/* Контейнер 3: Автор */}
+        <div className={styles.authorBlock}>
+          <img src={Avatar} alt="Заводчик" className={styles.avatar} />
+          <div className={styles.authorInfo}>
+            <h5 className={styles.name}>Татьяна Кошкина</h5>
+            <p className={styles.role}>Заводчик</p>
+          </div>
         </div>
 
-        {/* Контейнер 2: Карточки */}
-        <div className={styles.cardsContainer}>
-          <TextBox 
-            icon={KittyIcon} 
-            title="Активный интеллектуал" 
-            description="Это сильные, ловкие и любознательные животные, отличные охотники и верхолазы. Они медленно взрослеют (до 5 лет), сохраняя игривость котенка, и обожают наблюдать за миром с высоты." 
-          />
-          <TextBox 
-            icon={HeartIcon} 
-            title="Отличное здоровье" 
-            description="Норвежские лесные кошки — аборигенная порода, закалённая суровым климатом. Естественный отбор подарил им крепкое здоровье и выносливость, что обеспечивает долгую (15 и более лет) и активную жизнь." 
-          />
-          <TextBox 
-            icon={PawIcon} 
-            title="Дружелюбный характер" 
-            description="«Норвеги» известны своим мягким, уравновешенным нравом, высоким интеллектом и терпимостью к детям и другим животным. Они формируют крепкую связь со всеми членами семьи." 
-          />
+        {/* Контейнер 4: Текст */}
+        <div className={styles.textBlock}>
+          <ColonIcon className={styles.icon} />
+
+          <p className={styles.text}>
+            Наша история <span className={styles.highlight}>началась с любви</span> к одной норвежской лесной кошке, покорившей нас своей красотой и характером. Стремление глубже изучить породу и делиться этой радостью привело к созданию питомника «North Way».
+            <br /><br />
+            Для нас разведение — <span className={styles.highlight}>это ответственность</span>. Мы заботимся о здоровье и будущем каждого нашего котёнка и радуемся, когда они обретают любящие семьи. Мы приглашаем вас стать частью нашей большой семьи.
+          </p>
         </div>
 
       </div>

@@ -10,11 +10,12 @@
   width: 100%;
   margin: 0; padding: 0;
   background-color: transparent; 
-  position: relative;
+  /* position: relative; */
   z-index: 100;
+  position: absolute; 
 }
 
-.sticky { position: sticky; top: 0; }
+/* .sticky { position: sticky; top: 0; } */
 
 .container {
   max-width: 1180px;

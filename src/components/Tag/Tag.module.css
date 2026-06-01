@@ -1,0 +1,65 @@
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 1px 10px; 
+  border-radius: 50px; 
+  width: fit-content; /* ИСПРАВЛЕНО: больше не растягивается! */
+  height: fit-content; /* ИСПРАВЛЕНО */
+}
+
+.text {
+  font-family: var(--font-body);
+  font-size: var(--body3-size);
+  font-weight: var(--body3-weight);
+  line-height: var(--body3-line-height);
+  color: var(--color-white);
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--icon-size, 18px);   /* используем переменную */
+  height: var(--icon-size, 18px);
+}
+.iconWrapper svg {
+  width: 100%;      /* растягивается на размер обертки */
+  height: 100%;
+  color: var(--color-white);
+}
+
+/* ВАРИАНТЫ ПОЛА */
+.gender { 
+  background-color: var(--color-maingreen35); 
+  height: 22px; /* ИСПРАВЛЕНО */
+}
+
+/* ВАРИАНТЫ СТАТУСА */
+.statusFree { background-color: var(--color-khaki); height: 20px; } 
+.statusWatch { background-color: var(--color-seablue); height: 20px; }
+.statusBooked { background-color: var(--color-darkgreen); height: 20px; }
+.statusFamily { background-color: var(--color-grassgreen); height: 20px; }
+.statusFamily .text { color: var(--color-darkgreen); }
+.statusStay { background-color: var(--color-maingreen60); height: 20px; }
+
+/* ДАТА РОЖДЕНИЯ */
+.birthday { 
+  background-color: var(--color-maingreen35); 
+  height: 22px; /* ИСПРАВЛЕНО */
+}
+
+@media (max-width: 768px) {
+  .tag {
+    padding: 2px 8px;
+    font-size: 11px;
+    gap: 6px;
+  }
+    .iconWrapper {
+    --icon-size: 12px;   /* или просто переопредели переменную */
+  }
+
+  .text {
+    font-size: 12px;
+  }
+}

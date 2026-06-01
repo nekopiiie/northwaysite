@@ -1,0 +1,163 @@
+/* Обертка расширяется до 1920 */
+.sectionWrapper {
+  max-width: 1920px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+
+.sectionContainer {
+    --side-pad: clamp(16px, 9vw, 110px);
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: 766px;
+  background-color: var(--color-lightgray);
+  border-radius: 20px;
+  
+  /* Плавный паддинг: от 110 на ПК до 0 на мобилке */
+
+  /* padding: 70px clamp(16px, 9vw, 110px) 80px; */
+
+  padding: 70px var(--side-pad) 80px;
+  overflow: hidden;
+  
+  background-image: url('../../assets/images/kittenssection-bg.png');
+  background-size: auto; 
+  background-repeat: no-repeat;
+  background-position: bottom center; 
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  height: 100%;
+}
+
+.textBlock {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between; 
+}
+.textInner { display: flex; flex-direction: column; gap: 10px; }
+
+.heading { 
+  margin: 0; 
+  font-family: var(--font-heading) !important; 
+  font-size: var(--h2-size); 
+  font-weight: var(--h2-weight); 
+  line-height: var(--h2-line-height); 
+  color: var(--color-darkgreen); 
+}
+.subtitle { margin: 0; 
+    font-family: var(--font-body); 
+    font-weight: var(--h6-weight);
+    font-size: var(--h6-size); 
+    line-height: var(--h6-line-height);
+    color: var(--color-maingreen90); }
+
+.mobileBtn { display: none; }
+
+/* Карточки всегда в строку */
+.cardsScroll {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; 
+  overflow-x: hidden; 
+}
+
+
+/* ==========================================
+   ПЛАНШЕТ: КНОПКА УЕЗЖАЕТ ВНИЗ (< 1000px)
+   ========================================== */
+@media (max-width: 1000px) {
+  .textBlock {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    max-width: 100%;
+  }
+  .desktopBtn { display: none; }
+  .mobileBtn { display: inline-flex; width: 100%; order: 2; }
+}
+
+@media (max-width: 1250px) {
+  .cardsScroll {
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    overflow-y: visible !important;
+    justify-content: flex-start;
+    margin-left: -16px;
+    margin-right: -16px;
+    padding: 10px 16px;
+    scrollbar-width: none;
+  }
+  .cardsScroll::-webkit-scrollbar { display: none; }
+}
+
+@media (max-width: 1310px) and (min-width: 769px) {
+  .sectionContainer {
+    overflow: visible;
+  }
+
+  .cardsScroll {
+    margin-right: calc(-1 * var(--side-pad));
+    padding-right: var(--side-pad);
+  }
+}
+
+/* ==========================================
+   МОБИЛЬНАЯ ВЕРСИЯ (< 768px)
+   ========================================== */
+@media (max-width: 768px) {
+  .sectionWrapper { padding: 24px 0; }
+  
+  .sectionContainer {
+    min-height: auto;
+    padding: 24px 16px 32px;
+    border-radius: 16px;
+    background-position: center 40%; /* Подвинуть фон */
+  }
+
+  .content { gap: 32px; }
+  .textInner { gap: 2px; }
+  .heading { font-size: var(--h3-size); }
+
+  .cardsScroll {
+    flex-wrap: nowrap !important; /* Жестко в одну линию */
+    overflow-x: auto !important;   /* Только горизонтальный скролл */
+    overflow-y: visible !important; /* ЗАПРЕЩАЕМ обрезку сверху/снизу */
+    justify-content: flex-start;
+    align-items: flex-start;
+    
+    margin-left: -16px;
+    margin-right: -16px;
+    padding: 10px 16px;
+    scrollbar-width: none; 
+  }
+  .cardsScroll::-webkit-scrollbar { display: none; }
+
+  .cardsScroll > div {
+    flex-shrink: 0;
+  }
+
+  .mobileBtn{
+    /* width: fit-content; */
+    /* display: flex; */
+    padding: 6pt 6pt 6pt 20pt;
+  }
+}
+
+@media (max-width: 426px) {
+.content .mobileBtn {
+    width: 100%;
+    display: flex;
+    padding: 6pt 6pt 6pt 20pt;
+  }
+}
