@@ -1,0 +1,93 @@
+.faqItem {
+  width: 100%;
+  padding: 10px 20px;
+  background-color: var(--color-lightgreen);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border: 2px solid transparent;
+  overflow: hidden;
+}
+
+.faqItem:hover {
+  border-color: var(--color-maingreen10);
+}
+
+/* Цветовые варианты */
+.lightGreen1 { background-color: var(--color-lightgreen); }
+.lightGreen2 { background-color: var(--color-lightgreen2); }
+.lightGreen3 { background-color: var(--color-lightgreen3); }
+.lightGreen4 { background-color: var(--color-lightgreen4); }
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.question {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--h6-size);
+  font-weight: var(--h6-weight);
+  color: var(--color-maingreen);
+  line-height: 1.4;
+  flex: 1;
+}
+
+.number {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  line-height: 45px;
+  font-weight: var(--body1-weight);
+  color: var(--color-maingreen);
+  flex-shrink: 0;
+}
+
+.answerWrapper {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.faqItem.open .answerWrapper {
+  max-height: 400px; /* достаточно для любого ответа */
+  opacity: 1;
+}
+
+.answer {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--color-maingreen90);
+  line-height: 1.5;
+  padding-top: 14px; /* отступ теперь внутри ответа, а не в обёртке */
+  width: 760px;              /* ← возвращаем фиксированную ширину относительно родителя */
+  word-wrap: break-word;
+}
+
+/* ==================== МОБИЛЬНАЯ ВЕРСИЯ ==================== */
+@media (max-width: 768px) {
+  .faqItem {
+    padding: 10px 16px;
+  }
+
+  .question,
+  .number {
+    font-size: var(--body5-size);
+  }
+
+  .number {
+    font-size: 18px;
+    line-height: 36px;
+  }
+
+  .answer {
+    font-size: 13px;
+    padding-top: 8px;
+    width: 100%;
+    word-wrap: break-word;
+  }
+}

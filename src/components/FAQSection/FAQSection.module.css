@@ -1,0 +1,59 @@
+/* ==========================================
+   ОСНОВНЫЕ СТИЛИ (как в BreedSection)
+   ========================================== */
+.sectionWrapper {
+  padding: 64px clamp(16px, 9vw, 130px) 52px;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.heading {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: var(--h2-size);
+  font-weight: var(--h2-weight);
+  color: var(--color-darkgreen);
+  text-align: center;
+  line-height: 1.1;
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  padding-bottom: 32px;
+}
+
+/* ==========================================
+   МОБИЛЬНАЯ ВЕРСИЯ (≤768px)
+   ========================================== */
+@media (max-width: 768px) {
+  .sectionWrapper {
+    padding: 16px 16px 52px 16px;
+  }
+
+  .content {
+    gap: 24px;
+  }
+
+  .heading {
+    font-size: var(--h3-size);
+    line-height: 0.95;
+  }
+
+  .faqList {
+    gap: 8px;
+  }
+}

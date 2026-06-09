@@ -4,7 +4,7 @@
   gap: 16px;
   height: 40px;
   width: fit-content;
-  padding: 0 8px; /* Чуть-чуть отступов по бокам, чтобы не прилипало */
+  padding: 0 8px;
   
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.01);
@@ -12,7 +12,6 @@
   -webkit-backdrop-filter: blur(3px);
 }
 
-/* Обычная цифра */
 .item {
   font-family: var(--font-pagination);
   font-size: var(--pagination-size);
@@ -23,7 +22,6 @@
   user-select: none;
 }
 
-/* Активная цифра */
 .activeItem {
   font-family: var(--font-pagination);
   font-size: var(--pagination-size);
@@ -34,29 +32,21 @@
   user-select: none;
 }
 
-/* ЛИНИЯ */
 .line {
-  width: 100px;       
-  height: 3px;        
+  display: block;
+  width: 100px;
+  height: 3px;
   background-color: var(--color-white);
-  border-radius: 3px; 
-  
-  /* ВАЖНО: Точка отрисовки начинается с левого края */
+  border-radius: 3px;
   transform-origin: left;
-  
-  /* Подключаем анимацию (длительность 0.3 секунды) */
-  animation: drawLine 0.3s ease forwards; 
+  animation: drawLine 0.3s ease forwards;
 }
 
-/* Сама магия анимации */
 @keyframes drawLine {
-  from { transform: scaleX(0); } /* Изначально ширина 0 */
-  to { transform: scaleX(1); }   /* Растягивается до 100% */
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
 }
 
-/* ==========================================
-   КНОПКИ-СТРЕЛКИ (база из circlePrimary)
-   ========================================== */
 .arrowBtn {
   display: flex;
   align-items: center;
@@ -74,6 +64,7 @@
   background-color: var(--color-whitegreen50);
   border: 0.5px solid var(--color-maingreen5);
 }
+
 .arrowBtn:hover:not(:disabled) .arrowIcon {
   color: var(--color-white);
 }
@@ -85,9 +76,8 @@
   transition: color 0.2s ease;
 }
 
-/* Отключенная кнопка (на 1-й странице влево нельзя) */
 .disabled {
   opacity: 0.4;
   cursor: not-allowed;
-  pointer-events: none; /* Отключает даже hover эффект */
+  pointer-events: none;
 }

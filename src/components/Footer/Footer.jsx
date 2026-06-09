@@ -16,11 +16,16 @@ const NAV_ITEMS = [
 ];
 
 const Footer = () => {
+  const scrollToHero = () => {
+    document.getElementById('hero')?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  };
+
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
-        
-        {/* === ВЕРХНИЙ БЛОК (Лого + Контакты) === */}
         <div className={styles.topRow}>
           <div className={styles.logoWrapper}>
             <Logo />
@@ -33,9 +38,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* === НИЖНИЙ БЛОК (Адрес/Копирайт + Навигация) === */}
         <div className={styles.bottomRow}>
-          
           <div className={styles.copyrightWrapper}>
             <p className={styles.address}>Санкт-Петербург, пр. Лесной, 79</p>
             <p className={styles.copyright}>© 2026, Nortway</p>
@@ -43,23 +46,29 @@ const Footer = () => {
 
           <div className={styles.navWrapper}>
             {NAV_ITEMS.map((item) => (
-              <Button 
+              <Button
                 key={item.id}
-                variant="alternativeWhite" 
-                title={item.title} 
+                variant="alternativeWhite"
+                title={item.title}
               />
             ))}
-            {/* Кнопка "Наверх" с локальным изменением размера */}
-            <Button 
-                variant="circlePrimary" 
-                className={styles.circleBtn}
+
+            <Button
+              variant="circlePrimary"
+              className={`${styles.circleBtn} ${styles.desktopScrollBtn}`}
+              onClick={scrollToHero}
             >
-                <ArrowTop />
+              <ArrowTop />
             </Button>
           </div>
-
         </div>
       </div>
+
+      <Button
+        variant="circlePrimary"
+        className={styles.mobileScrollBtn}
+        onClick={scrollToHero}
+      />
     </footer>
   );
 };

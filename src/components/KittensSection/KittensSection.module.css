@@ -148,8 +148,6 @@
   }
 
   .mobileBtn{
-    /* width: fit-content; */
-    /* display: flex; */
     padding: 6pt 6pt 6pt 20pt;
   }
 }
@@ -159,5 +157,9 @@
     width: 100%;
     display: flex;
     padding: 6pt 6pt 6pt 20pt;
+  }
+
+  .subtitle {
+    max-width: 225px;
   }
 }

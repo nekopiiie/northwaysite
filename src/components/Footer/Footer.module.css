@@ -7,6 +7,18 @@
   padding: 40px clamp(16px, 9vw, 130px) 60px clamp(16px, 9vw, 130px);
   box-sizing: border-box;
   border-radius: 20px 20px 0 0; /* Скругление только сверху */
+  
+  position: relative;
+  z-index: 2;
+  margin-top: -40px;
+}
+
+.desktopScrollBtn {
+  display: inline-flex;
+}
+
+.mobileScrollBtn {
+  display: none;
 }
 
 .container {
@@ -134,9 +146,11 @@
   .copyrightWrapper {
     order: 2;
   }
-  .circleBtn {
+  /*мб и верну я не знаю чем я думаю */
+
+  /* .circleBtn {
     display: none !important;
-  }
+  } */
 }
 
 /* ==========================================
@@ -188,7 +202,52 @@
   }
 
   /* ПРИНУДИТЕЛЬНОЕ УДАЛЕНИЕ */
-  .circleBtn {
+
+  /* .circleBtn {
     display: none !important;
+  } */
+
+  .desktopScrollBtn {
+    display: none;
+  }
+
+  .mobileScrollBtn {
+    display: inline-flex;
+    position: fixed;
+    right: 16px;
+    bottom: 24px;
+    z-index: 1000;
+    width: 42px !important;
+    height: 42px !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+  }
+
+  .mobileScrollBtn svg {
+    width: 18px !important;
+    height: 18px !important;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .desktopScrollBtn {
+    display: none !important;
+  }
+
+  .mobileScrollBtn {
+    display: inline-flex !important;
+    position: fixed;
+    right: 16px;
+    bottom: 24px;
+    z-index: 1000;
+    width: 42px !important;
+    height: 42px !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+  }
+
+  .mobileScrollBtn svg {
+    width: 18px !important;
+    height: 18px !important;
   }
 }

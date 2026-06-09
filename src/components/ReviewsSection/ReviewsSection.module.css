@@ -1,0 +1,121 @@
+.wrapper {
+  width: 100%;
+  padding: 20px clamp(16px, 9vw, 20px);
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1920px;
+  margin: 0 auto;
+  min-height: 660px;
+  padding: 64px var(--side-pad, 110px);
+  background-color: var(--color-darkgreen);
+  border-radius: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  position: relative;
+
+  background-image: url('../../assets/images/reviews_section_bg.png');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+.container {
+  --side-pad: clamp(16px, 9vw, 110px);
+}
+
+.header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.heading {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: var(--h2-size);
+  font-weight: var(--h2-weight);
+  color: var(--color-white);
+}
+
+.grid {
+  display: flex;
+  gap: 20px;
+  overflow: hidden;
+  will-change: transform;
+  scroll-behavior: smooth;
+}
+
+.paginationWrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+@media (max-width: 1250px) {
+  .wrapper {
+    padding: 32px 0;
+  }
+    .grid {
+    overflow-x: auto;
+    scrollbar-width: none;
+    margin-right: calc(-1 * var(--side-pad));   /* ← Важно! */
+    padding-right: var(--side-pad);
+    padding-left: 0;
+  }
+
+  .grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .grid > * {
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 32px 0;
+  }
+
+  .container {
+    min-height: auto;
+    padding: 24px 16px 48px;
+    border-radius: 16px;
+    gap: 32px;
+  }
+
+  .heading {
+    font-size: var(--h3-size);
+  }
+
+  .grid {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 10px;
+    scrollbar-width: none;
+    
+    /* margin-left: -16px; */
+    margin-right: -16px;
+    padding: 10px 16px;
+    gap: 16px;
+  }
+
+  .grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .grid > div {
+    flex-shrink: 0;
+    scroll-snap-align: start;
+  }
+
+  .paginationWrapper {
+    display: none;
+  }
+}

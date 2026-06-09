@@ -1,0 +1,237 @@
+/* ==========================================
+   КАРТОЧКА ФОРМЫ
+   ========================================== */
+.cardShell {
+  position: relative;
+  width: 445px;
+  height: 414px;
+}
+
+.card,
+.successCard {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 32px;
+  background-color: var(--color-white);
+  border-radius: 15px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+  transition: opacity 0.35s ease, transform 0.45s ease, filter 0.35s ease;
+  z-index: 1;
+}
+
+.cardSubmitted {
+  opacity: 0.18;
+  filter: blur(1px);
+  transform: translateY(10px) scale(0.995);
+  pointer-events: none;
+}
+
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.heading {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: var(--h3-size);
+  font-weight: var(--h3-weight);
+  color: var(--color-darkgreen);
+  line-height: 0.95;
+  display: flex;
+  flex-direction: column;
+}
+
+.headingLine {
+  display: block;
+}
+
+.description {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--body3-size);
+  font-weight: var(--body3-weight);
+  line-height: 1.4;
+  color: var(--color-maingreen90);
+}
+
+.inputsGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.row {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.row > * {
+  flex: 1;
+  min-width: 0;
+}
+
+.checkboxWrapper {
+  margin-top: 0;
+}
+
+.submitBtn {
+  width: 100%;
+}
+
+/* ==========================================
+   SUCCESS OVERLAY
+   ========================================== */
+.successCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(-28px);
+  transition: opacity 0.35s ease, transform 0.45s ease;
+  pointer-events: none;
+}
+
+.successVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.successContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+}
+
+.iconWrap {
+  width: 84px;
+  height: 84px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  line-height: 0;
+  flex-shrink: 0;
+}
+
+.icon {
+  width: 84px;
+  height: 84px;
+  display: block;
+  color: var(--color-khaki);
+  overflow: visible;
+}
+
+.successTitle {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: var(--h3-size);
+  font-weight: var(--h3-weight);
+  color: var(--color-darkgreen);
+  white-space: normal;
+  word-break: break-word;
+}
+
+.successText {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--body3-size);
+  font-weight: var(--body3-weight);
+  line-height: 1.4;
+  color: var(--color-maingreen90);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================
+   АДАПТИВ
+   ========================================== */
+@media (max-width: 768px) {
+  .cardShell {
+    width: 100%;
+    max-width: 445px;
+    height: auto;
+    min-height: 414px;
+  }
+
+  .card,
+  .successCard {
+    padding: 24px;
+  }
+
+  .card {
+    gap: 40px;
+  }
+
+  .heading,
+  .successTitle {
+    font-size: var(--h4-size);
+    line-height: 0.9;
+  }
+
+  .description,
+  .successText {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .row {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .iconWrap,
+  .icon {
+    width: 72px;
+    height: 72px;
+  }
+}
+
+@media (max-width: 426px) {
+   .card{
+    gap: 36px;
+   }
+    .cardShell {
+    max-width: 100%;
+  }
+
+  .textBlock {
+    gap: 16px;
+  }
+
+  .successContent {
+    gap: 16px;
+  }
+
+  .heading {
+    font-size: var(--h4-size);
+    line-height: 0.95;
+  }
+
+  .submitBtn{
+    padding: 6pt 6pt 6pt 20pt;
+  }
+}

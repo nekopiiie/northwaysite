@@ -8,7 +8,7 @@ function App() {
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', backgroundColor: 'white' }}>
       <Header variant="primary" activePage="main" />
       
-      <main style={{ flex: 1 }}>
+      <main style={{ flex: 1, position: 'relative', zIndex: 0}}>
         <MainPage /> {/* Рендерим страницу */}
       </main>
 
