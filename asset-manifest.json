@@ -1,11 +1,15 @@
 {
   "files": {
-    "main.css": "/northwaysite/static/css/main.114bdd04.css",
-    "main.js": "/northwaysite/static/js/main.9ff10485.js",
+    "main.css": "/northwaysite/static/css/main.c98c15bd.css",
+    "main.js": "/northwaysite/static/js/main.b4481c9f.js",
     "static/js/453.f30133a9.chunk.js": "/northwaysite/static/js/453.f30133a9.chunk.js",
+    "static/media/reviews_section_bg.png": "/northwaysite/static/media/reviews_section_bg.a9d2007be6d90f0e3dff.png",
     "static/media/kittenssection-bg.png": "/northwaysite/static/media/kittenssection-bg.7f3b9a62e0be6a1d906e.png",
+    "static/media/contact-bg.jpg": "/northwaysite/static/media/contact-bg.63a4c96cfd2603f02e6f.jpg",
     "static/media/whyussection.jpg": "/northwaysite/static/media/whyussection.4f96047560a7d86b07ae.jpg",
     "static/media/hero-bg.jpg": "/northwaysite/static/media/hero-bg.17492f2870313f92c6cb.jpg",
+    "static/media/news1.jpg": "/northwaysite/static/media/news1.7d56d6eb80dba8759267.jpg",
+    "static/media/news3.jpg": "/northwaysite/static/media/news3.f0213d316bf4f2f2ceb5.jpg",
     "static/media/k3.jpg": "/northwaysite/static/media/k3.62b67c557c1d979ffa38.jpg",
     "static/media/k1.jpg": "/northwaysite/static/media/k1.8959e4e976a5122a0c54.jpg",
     "static/media/Coolvetica.woff2": "/northwaysite/static/media/Coolvetica.7838d1d1b17982780b8f.woff2",
@@ -16,6 +20,7 @@
     "static/media/Involve-Regular.woff2": "/northwaysite/static/media/Involve-Regular.f4fb37285169fddd22de.woff2",
     "static/media/Involve-Bold.woff2": "/northwaysite/static/media/Involve-Bold.91f132fa81f38246a9e1.woff2",
     "static/media/Logo.svg": "/northwaysite/static/media/Logo.ced8b56aa39c34bb540c4f39c1d0b634.svg",
+    "static/media/avatar_rev_3.jpg": "/northwaysite/static/media/avatar_rev_3.d01670f2aa409e64f95b.jpg",
     "static/media/Cake.svg": "/northwaysite/static/media/Cake.9ef11ec9341273d1ee25be5e2e2a665e.svg",
     "static/media/Kitty.svg": "/northwaysite/static/media/Kitty.466ba80eed4a1ec464e576625db83e9b.svg",
     "static/media/Support.svg": "/northwaysite/static/media/Support.8443674bdf5d6d624f9f08e008097980.svg",
@@ -23,9 +28,10 @@
     "static/media/Heart.svg": "/northwaysite/static/media/Heart.3be3a3a502a7ce0df4a9b07ec74880f3.svg",
     "static/media/CloseIcon.svg": "/northwaysite/static/media/CloseIcon.4d8cdf476c158d8d9cd71bd6e981b738.svg",
     "static/media/Shield.svg": "/northwaysite/static/media/Shield.beea745d5b6a16e0f4a35e6412640fa8.svg",
+    "static/media/PawMaw.svg": "/northwaysite/static/media/PawMaw.2dbee14e2dea05116b0a3049175377c8.svg",
     "static/media/Female.svg": "/northwaysite/static/media/Female.bf2f4706f4f62b4ca2d318df5b418f28.svg",
     "static/media/VK.svg": "/northwaysite/static/media/VK.751d0915ed34ad78c84a2402a8e03a65.svg",
-    "static/media/Paw.svg": "/northwaysite/static/media/Paw.407a401367b5009d39c64a3bae8d3810.svg",
+    "static/media/Paw.svg": "/northwaysite/static/media/Paw.806fb426028b6009d52e2e9e877f9440.svg",
     "static/media/Loupe.svg": "/northwaysite/static/media/Loupe.20baa8b486cb496a87a5cb2adab708d4.svg",
     "static/media/Male.svg": "/northwaysite/static/media/Male.5c52c53f5ecb72ce58163f9121216a84.svg",
     "static/media/BurgerMenu.svg": "/northwaysite/static/media/BurgerMenu.57b3640f6b66014c05de86e54aa0c435.svg",
@@ -36,12 +42,12 @@
     "static/media/ArrowButton.svg": "/northwaysite/static/media/ArrowButton.9f7cdb3a4797beff24ec16525f90e49f.svg",
     "static/media/Check.svg": "/northwaysite/static/media/Check.0a4424c7340087760e1985fe591d9994.svg",
     "static/media/Phone.svg": "/northwaysite/static/media/Phone.86545f2de2d39207f328b4fc368147bf.svg",
-    "main.114bdd04.css.map": "/northwaysite/static/css/main.114bdd04.css.map",
-    "main.9ff10485.js.map": "/northwaysite/static/js/main.9ff10485.js.map",
+    "main.c98c15bd.css.map": "/northwaysite/static/css/main.c98c15bd.css.map",
+    "main.b4481c9f.js.map": "/northwaysite/static/js/main.b4481c9f.js.map",
     "453.f30133a9.chunk.js.map": "/northwaysite/static/js/453.f30133a9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.114bdd04.css",
-    "static/js/main.9ff10485.js"
+    "static/css/main.c98c15bd.css",
+    "static/js/main.b4481c9f.js"
   ]
 }
