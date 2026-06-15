@@ -9,11 +9,11 @@ import { ReactComponent as TGIcon } from '../../ui-library/src/assets/icons/TG.s
 import { ReactComponent as ArrowTop } from '../../ui-library/src/assets/icons/ArrowTop.svg';
 
 const NAV_ITEMS = [
-  { id: 'main', title: 'главная', path: '/' },
-  { id: 'kittens', title: 'котята', path: '/kittens' },
-  { id: 'cats', title: 'наши кошки', path: '/cats' },
-  { id: 'about', title: 'о питомнике', path: '/about' },
-  { id: 'info', title: 'полезное', path: '/info' },
+  { id: 'main', title: 'главная', path: '/', disabled: false },
+  { id: 'kittens', title: 'котята', path: '/kittens', disabled: false },
+  { id: 'cats', title: 'наши кошки', path: '/cats', disabled: true },
+  { id: 'about', title: 'о питомнике', path: '/about', disabled: true },
+  { id: 'info', title: 'полезное', path: '/info', disabled: true },
 ];
 
 const Footer = () => {
@@ -46,15 +46,17 @@ const Footer = () => {
           </div>
 
           <div className={styles.navWrapper}>
-            {NAV_ITEMS.map((item) => (
-              <Link
-                key={item.id}
-                to={item.path}
-                className={styles.footerLink}
-              >
-                {item.title}
-              </Link>
-            ))}
+            {NAV_ITEMS.map((item) =>
+              item.disabled ? (
+                <span key={item.id} className={styles.footerLink}>
+                  {item.title}
+                </span>
+              ) : (
+                <Link key={item.id} to={item.path} className={styles.footerLink}>
+                  {item.title}
+                </Link>
+              )
+            )}
 
             <Button
               variant="circlePrimary"

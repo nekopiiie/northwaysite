@@ -10,9 +10,32 @@
   width: 100%;
   margin: 0; padding: 0;
   background-color: transparent; 
-  /* position: relative; */
+  
   z-index: 100;
-  position: absolute; 
+  /* position: absolute;  */
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  
+  transition:
+    background-color 0.25s ease,
+    backdrop-filter 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.scrolled {
+  /* position: fixed; */
+
+
+  /* background-color: var(--color-darkgreen);
+  backdrop-filter: blur(12px); */
+
+  background-color: var(--color-white);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  /* box-shadow: 0 4px 4px rgba(0, 0, 0, 0.02); */
 }
 
 /* .sticky { position: sticky; top: 0; } */
@@ -154,10 +177,28 @@
 }
 
 /* Активное состояние */
-.activeNavLink {
+
+/* .activeNavLink {
   background-color: var(--color-white) !important;
   color: var(--color-darkgreen) !important;
   border-color: var(--color-white) !important;
+} */
+
+.activeNavLinkPrimary {
+  background-color: var(--color-white) !important;
+  color: var(--color-darkgreen) !important;
+  border-color: var(--color-white) !important;
+}
+
+.activeNavLinkSecondary {
+  background-color: var(--color-darkgreen) !important;
+  color: var(--color-white) !important;
+  border-color: var(--color-darkgreen) !important;
+}
+
+.navLinkPrimary,
+.navLinkSecondary {
+  transition: all 0.3s ease;
 }
 
 .actions {

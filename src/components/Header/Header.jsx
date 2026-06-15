@@ -15,13 +15,15 @@ import { ReactComponent as BurgerMenuIcon } from '../../ui-library/src/assets/ic
 const NAV_ITEMS = [
   { id: 'main', title: 'главная', path: '/' },
   { id: 'kittens', title: 'котята', path: '/kittens' },
-  { id: 'cats', title: 'наши кошки', path: '/cats' },
-  { id: 'about', title: 'о питомнике', path: '/about' },
-  { id: 'info', title: 'полезное', path: '/info' },
+
+  { id: 'cats', title: 'наши кошки', disabled: true },
+  { id: 'about', title: 'о питомнике', disabled: true },
+  { id: 'info', title: 'полезное', disabled: true },
 ];
 
 const Header = ({ variant = 'primary' }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   // const location = useLocation();
 
   useEffect(() => {
@@ -40,8 +42,29 @@ const Header = ({ variant = 'primary' }) => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 300);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+  
+  const currentVariant =
+  variant === 'primary' && isScrolled
+    ? 'secondary'
+    : variant;
+
   return (
-    <header className={`${styles.header} ${styles[variant]}`}>
+    <header
+      className={`${styles.header} ${styles[currentVariant]} ${
+        isScrolled ? styles.scrolled : ''
+      }`}
+    >
       
       {/* ДЕСКТОП */}
       <div className={styles.container}>
@@ -53,26 +76,53 @@ const Header = ({ variant = 'primary' }) => {
           </div>
 
           <nav className={styles.nav}>
-            {NAV_ITEMS.map((item) => (
+            {NAV_ITEMS.map((item) => {
+            const baseClass =
+              currentVariant === 'primary'
+                ? styles.navLinkPrimary
+                : styles.navLinkSecondary;
+
+            if (item.disabled) {
+              return (
+                <span
+                  key={item.id}
+                  className={baseClass}
+                >
+                {item.title}
+                </span>
+              );
+            }
+
+            return (
               <NavLink
                 key={item.id}
                 to={item.path}
-                className={({ isActive }) => 
-                  `${variant === 'primary' ? styles.navLinkPrimary : styles.navLinkSecondary} ${
-                    isActive ? styles.activeNavLink : ''
-                  }`
+                end={item.path === '/'}
+
+                className={({ isActive }) =>
+                  `${currentVariant === 'primary'
+                    ? styles.navLinkPrimary
+                    : styles.navLinkSecondary} ${
+                      isActive
+                        ? currentVariant === 'primary'
+                          ? styles.activeNavLinkPrimary
+                          : styles.activeNavLinkSecondary
+                        : ''
+                    }`
                 }
+
               >
                 {item.title}
               </NavLink>
-            ))}
+            );
+          })}
           </nav>
 
           <div className={styles.actions}>
             <div className={styles.socialIcon}><VKIcon /></div>
             <div className={styles.socialIcon}><TGIcon /></div>
             <Button 
-              variant={variant === 'primary' ? 'withIconPrimary' : 'withIconSecondary'} 
+              variant={currentVariant === 'primary' ? 'withIconPrimary' : 'withIconSecondary'} 
               title="999-99-99"
               icon={<PhoneIcon />}
             />
@@ -116,6 +166,8 @@ const Header = ({ variant = 'primary' }) => {
                   key={item.id}
                   title={item.title}
                   to={item.path}
+                  disabled={item.disabled}
+                  end={item.path === '/'}
                   onClick={() => setIsMenuOpen(false)}
                 />
               ))}
