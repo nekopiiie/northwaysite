@@ -1,20 +1,28 @@
 {
   "files": {
-    "main.css": "/northwaysite/static/css/main.c98c15bd.css",
-    "main.js": "/northwaysite/static/js/main.b4481c9f.js",
+    "main.css": "/northwaysite/static/css/main.9ddb4a1d.css",
+    "main.js": "/northwaysite/static/js/main.d9d39e3f.js",
     "static/js/453.f30133a9.chunk.js": "/northwaysite/static/js/453.f30133a9.chunk.js",
     "static/media/reviews_section_bg.png": "/northwaysite/static/media/reviews_section_bg.a9d2007be6d90f0e3dff.png",
+    "static/media/AdultCatsForFamily-bg.png": "/northwaysite/static/media/AdultCatsForFamily-bg.3f068d161b6c2ea6f5b0.png",
+    "static/media/KittensPageHero-bg.jpg": "/northwaysite/static/media/KittensPageHero-bg.3810d2caec82bd8cb0ea.jpg",
     "static/media/kittenssection-bg.png": "/northwaysite/static/media/kittenssection-bg.7f3b9a62e0be6a1d906e.png",
     "static/media/contact-bg.jpg": "/northwaysite/static/media/contact-bg.63a4c96cfd2603f02e6f.jpg",
     "static/media/whyussection.jpg": "/northwaysite/static/media/whyussection.4f96047560a7d86b07ae.jpg",
     "static/media/hero-bg.jpg": "/northwaysite/static/media/hero-bg.17492f2870313f92c6cb.jpg",
+    "static/media/k1.jpg": "/northwaysite/static/media/k1.8d9d825428ce2c5b2b69.jpg",
     "static/media/news1.jpg": "/northwaysite/static/media/news1.7d56d6eb80dba8759267.jpg",
+    "static/media/k7.jpg": "/northwaysite/static/media/k7.71e53ec8d1d9da207cf7.jpg",
+    "static/media/k4.jpg": "/northwaysite/static/media/k4.ce1a4d0f5429fcaac894.jpg",
+    "static/media/k5.jpg": "/northwaysite/static/media/k5.4f137b598694b6a49025.jpg",
     "static/media/news3.jpg": "/northwaysite/static/media/news3.f0213d316bf4f2f2ceb5.jpg",
+    "static/media/k6.jpg": "/northwaysite/static/media/k6.ecdd4cbf1712261e5418.jpg",
+    "static/media/k8.jpg": "/northwaysite/static/media/k8.87d52262d10d44442967.jpg",
     "static/media/k3.jpg": "/northwaysite/static/media/k3.62b67c557c1d979ffa38.jpg",
-    "static/media/k1.jpg": "/northwaysite/static/media/k1.8959e4e976a5122a0c54.jpg",
     "static/media/Coolvetica.woff2": "/northwaysite/static/media/Coolvetica.7838d1d1b17982780b8f.woff2",
     "static/media/k2.jpg": "/northwaysite/static/media/k2.390e7a4654d0e9ac004d.jpg",
     "static/media/Manrope.woff2": "/northwaysite/static/media/Manrope.59de12c9ccf7d6cfa3b6.woff2",
+    "static/media/NonePhoto.jpg": "/northwaysite/static/media/NonePhoto.c17550f09fe24b550bcc.jpg",
     "static/media/Involve-SemiBold.woff2": "/northwaysite/static/media/Involve-SemiBold.da087775f0262c2d9be8.woff2",
     "static/media/Involve-Medium.woff2": "/northwaysite/static/media/Involve-Medium.3af2436b1069286422df.woff2",
     "static/media/Involve-Regular.woff2": "/northwaysite/static/media/Involve-Regular.f4fb37285169fddd22de.woff2",
@@ -42,12 +50,12 @@
     "static/media/ArrowButton.svg": "/northwaysite/static/media/ArrowButton.9f7cdb3a4797beff24ec16525f90e49f.svg",
     "static/media/Check.svg": "/northwaysite/static/media/Check.0a4424c7340087760e1985fe591d9994.svg",
     "static/media/Phone.svg": "/northwaysite/static/media/Phone.86545f2de2d39207f328b4fc368147bf.svg",
-    "main.c98c15bd.css.map": "/northwaysite/static/css/main.c98c15bd.css.map",
-    "main.b4481c9f.js.map": "/northwaysite/static/js/main.b4481c9f.js.map",
+    "main.9ddb4a1d.css.map": "/northwaysite/static/css/main.9ddb4a1d.css.map",
+    "main.d9d39e3f.js.map": "/northwaysite/static/js/main.d9d39e3f.js.map",
     "453.f30133a9.chunk.js.map": "/northwaysite/static/js/453.f30133a9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c98c15bd.css",
-    "static/js/main.b4481c9f.js"
+    "static/css/main.9ddb4a1d.css",
+    "static/js/main.d9d39e3f.js"
   ]
 }
