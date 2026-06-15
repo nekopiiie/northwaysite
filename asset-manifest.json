@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/northwaysite/static/css/main.9ddb4a1d.css",
-    "main.js": "/northwaysite/static/js/main.1cfc1f09.js",
+    "main.css": "/northwaysite/static/css/main.e8814c8d.css",
+    "main.js": "/northwaysite/static/js/main.a03de614.js",
     "static/js/453.f30133a9.chunk.js": "/northwaysite/static/js/453.f30133a9.chunk.js",
     "static/media/reviews_section_bg.png": "/northwaysite/static/media/reviews_section_bg.a9d2007be6d90f0e3dff.png",
     "static/media/AdultCatsForFamily-bg.png": "/northwaysite/static/media/AdultCatsForFamily-bg.3f068d161b6c2ea6f5b0.png",
@@ -50,12 +50,12 @@
     "static/media/ArrowButton.svg": "/northwaysite/static/media/ArrowButton.9f7cdb3a4797beff24ec16525f90e49f.svg",
     "static/media/Check.svg": "/northwaysite/static/media/Check.0a4424c7340087760e1985fe591d9994.svg",
     "static/media/Phone.svg": "/northwaysite/static/media/Phone.86545f2de2d39207f328b4fc368147bf.svg",
-    "main.9ddb4a1d.css.map": "/northwaysite/static/css/main.9ddb4a1d.css.map",
-    "main.1cfc1f09.js.map": "/northwaysite/static/js/main.1cfc1f09.js.map",
+    "main.e8814c8d.css.map": "/northwaysite/static/css/main.e8814c8d.css.map",
+    "main.a03de614.js.map": "/northwaysite/static/js/main.a03de614.js.map",
     "453.f30133a9.chunk.js.map": "/northwaysite/static/js/453.f30133a9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9ddb4a1d.css",
-    "static/js/main.1cfc1f09.js"
+    "static/css/main.e8814c8d.css",
+    "static/js/main.a03de614.js"
   ]
 }
