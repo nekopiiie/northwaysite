@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './Breadcrumb.module.css';
 
 import { ReactComponent as ArrowTop } from '../../ui-library/src/assets/icons/ArrowTop.svg';
@@ -11,18 +12,16 @@ const Breadcrumb = ({ items = [], className }) => {
 
         return (
           <React.Fragment key={index}>
-            {/* Если элемент последний - просто текст, иначе - ссылка-кнопка */}
             {isLast ? (
               <span className={`${styles.item} ${styles.active}`}>
                 {item.title}
               </span>
             ) : (
-              <a href={item.path} className={styles.item}>
+              <Link to={item.path} className={styles.item}>
                 {item.title}
-              </a>
+              </Link>
             )}
 
-            {/* Рисуем стрелочку-разделитель после всех элементов, КРОМЕ последнего */}
             {!isLast && (
               <span className={styles.iconWrapper}>
                 <ArrowTop className={styles.icon} />
