@@ -34,10 +34,14 @@ const faqData = [
 ];
 
 const FAQSection = () => {
-  const [openId, setOpenId] = useState(null);
+  // Храним объект, где ключ - id вопроса, значение - true/false
+  const [openState, setOpenState] = useState({});
 
   const toggleFAQ = (id) => {
-    setOpenId(openId === id ? null : id);
+    setOpenState(prev => ({
+      ...prev,
+      [id]: !prev[id]   // переключаем состояние конкретного вопроса
+    }));
   };
 
   return (
@@ -45,13 +49,12 @@ const FAQSection = () => {
       <div className={styles.container}>
         <div className={styles.content}>
           <h2 className={styles.heading}>Часто задаваемые вопросы</h2>
-
           <div className={styles.faqList}>
             {faqData.map((item) => (
               <FAQItem
                 key={item.id}
                 {...item}
-                isOpen={openId === item.id}
+                isOpen={!!openState[item.id]}
                 onToggle={() => toggleFAQ(item.id)}
               />
             ))}

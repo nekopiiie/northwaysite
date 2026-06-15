@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styles from './Header.module.css';
 import { Button } from '../../ui-library/src/Library';
 import MobileMenuButton from './MobileMenuButton';
+import { NavLink } from 'react-router-dom';
 
 // Твои иконки
 import { ReactComponent as Logo } from '../../assets/icons/Logo.svg';
@@ -12,30 +13,29 @@ import { ReactComponent as PhoneIcon } from '../../ui-library/src/assets/icons/P
 import { ReactComponent as BurgerMenuIcon } from '../../ui-library/src/assets/icons/BurgerMenu.svg';
 
 const NAV_ITEMS = [
-  { id: 'main', title: 'главная' },
-  { id: 'kittens', title: 'котята' },
-  { id: 'cats', title: 'наши кошки' },
-  { id: 'about', title: 'о питомнике' },
-  { id: 'info', title: 'полезное' },
+  { id: 'main', title: 'главная', path: '/' },
+  { id: 'kittens', title: 'котята', path: '/kittens' },
+  { id: 'cats', title: 'наши кошки', path: '/cats' },
+  { id: 'about', title: 'о питомнике', path: '/about' },
+  { id: 'info', title: 'полезное', path: '/info' },
 ];
 
-const Header = ({ variant = 'primary', activePage = 'main' }) => {
+const Header = ({ variant = 'primary' }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // const location = useLocation();
 
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? 'hidden' : 'auto';
     return () => { document.body.style.overflow = 'auto'; };
   }, [isMenuOpen]);
 
-  // НОВЫЙ useEffect: Закрываем меню при растягивании окна
+  // Закрываем меню при растягивании окна
   useEffect(() => {
     const handleResize = () => {
-      // Если экран стал шире 768px (наш переходный барьер)
       if (window.innerWidth > 768) {
-        setIsMenuOpen(false); // Принудительно закрываем меню!
+        setIsMenuOpen(false);
       }
     };
-
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
@@ -47,17 +47,24 @@ const Header = ({ variant = 'primary', activePage = 'main' }) => {
       <div className={styles.container}>
         <div className={styles.desktop}>
           <div className={styles.logoWrapper}>
-            <Logo />
+            <NavLink to="/">
+              <Logo />
+            </NavLink>
           </div>
 
           <nav className={styles.nav}>
             {NAV_ITEMS.map((item) => (
-              <Button 
+              <NavLink
                 key={item.id}
-                variant={variant === 'primary' ? 'alternativeWhite' : 'alternativePrimary'}
-                title={item.title}
-                style={activePage === item.id ? { color: 'var(--color-maingreen90)' } : {}}
-              />
+                to={item.path}
+                className={({ isActive }) => 
+                  `${variant === 'primary' ? styles.navLinkPrimary : styles.navLinkSecondary} ${
+                    isActive ? styles.activeNavLink : ''
+                  }`
+                }
+              >
+                {item.title}
+              </NavLink>
             ))}
           </nav>
 
@@ -82,7 +89,9 @@ const Header = ({ variant = 'primary', activePage = 'main' }) => {
         {!isMenuOpen && (
           <div className={styles.mobile}>
             <div className={styles.logoWrapperMobile}>
-              <Logo />
+              <NavLink to="/">
+                <Logo />
+              </NavLink>
             </div>
             <div className={styles.mobileActions}>
               <div className={styles.socialIcon}><PhoneIcon /></div>
@@ -100,16 +109,18 @@ const Header = ({ variant = 'primary', activePage = 'main' }) => {
                 <CloseIcon />
               </button>
             </div>
+
             <nav className={styles.menuList}>
               {NAV_ITEMS.map((item) => (
-                <MobileMenuButton 
+                <MobileMenuButton
                   key={item.id}
                   title={item.title}
-                  isActive={activePage === item.id}
-                  onClick={() => setIsMenuOpen(false)} 
+                  to={item.path}
+                  onClick={() => setIsMenuOpen(false)}
                 />
               ))}
             </nav>
+
           </div>
         )}
       </div>

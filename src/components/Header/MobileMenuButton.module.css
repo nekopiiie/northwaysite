@@ -1,10 +1,13 @@
 .menuBtn {
-  width: fit-content; 
+  width: fit-content;
   height: auto;
   background: none;
   border: none;
-  border-bottom: 3px solid transparent; 
-  padding-bottom: 8px; 
+  /* Убираем подчёркивание у ссылок */
+  text-decoration: none;
+  /* Добавляем отступ для линии */
+  padding-bottom: 8px;
+  border-bottom: 3px solid transparent;
   font-family: var(--font-heading);
   font-size: var(--h3-size);
   font-weight: var(--h3-weight);
@@ -12,11 +15,12 @@
   color: var(--color-white);
   cursor: pointer;
   transition: all 0.2s ease;
-  text-align: center; 
+  text-align: center;
 }
 
 .menuBtn:hover {
   color: var(--color-whitegreen50);
+  border-bottom-color: transparent; /* без подчёркивания при ховере */
 }
 
 .active {

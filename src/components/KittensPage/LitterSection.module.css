@@ -1,0 +1,91 @@
+.litterWrapper {
+  width: 100%;
+  /* background-color: var(--color-lightgray); */
+  
+  
+  padding: 20px 0;
+}
+
+.litterContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 48px clamp(16px, 9vw, 110px);
+  box-sizing: border-box;
+  background-color: var(--color-lightgray);
+  border-radius: 20px;
+}
+
+.litterHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 36px; /* на десктопе */
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+}
+
+.litterTitle {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: var(--h2-size);
+  font-weight: var(--h2-weight);
+  color: var(--color-darkgreen);
+}
+
+.litterDate {
+  font-family: var(--font-pagination);
+  font-size: var(--pagination-size); /* 22px, letter-spacing 5% */
+  font-weight: var(--pagination-weight);
+  letter-spacing: var(--pagination-letter-spacing);
+  color: var(--color-maingreen90);
+  white-space: nowrap;
+}
+
+/* слайдер карточек – как в KittensSection */
+.cardsScroll {
+  display: flex;
+  /* gap: 20px; */
+
+  gap: clamp(20px, 5vw, 60px);
+  overflow-x: hidden;
+  justify-content: space-between;
+}
+
+@media (max-width: 1250px) {
+  .cardsScroll {
+    overflow-x: auto;
+    justify-content: flex-start;
+    margin-left: -16px;
+    margin-right: -16px;
+    padding: 10px 16px;
+    scrollbar-width: none;
+  }
+  .cardsScroll::-webkit-scrollbar { display: none; }
+  .cardsScroll > div {
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .litterContainer {
+    padding: 32px 16px;
+  }
+  .litterHeader {
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+  .litterTitle {
+    font-size: var(--h4-size);
+  }
+  .litterDate {
+    font-size: 20px;
+    letter-spacing: 0.05em;
+  }
+  .cardsScroll {
+    margin-left: -16px;
+    margin-right: -16px;
+    padding: 0 16px 10px;
+    gap: 20px;
+  }
+}

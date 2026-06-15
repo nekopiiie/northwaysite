@@ -1,0 +1,23 @@
+/* По умолчанию (десктоп) – скрываем блок */
+.mobileDescriptionWrapper {
+  display: none;
+}
+
+/* На мобилке (≤768px) – показываем, добавляем отступы */
+@media (max-width: 768px) {
+  .mobileDescriptionWrapper {
+    display: block;
+    padding: 24px 16px 8px 16px; /* сверху отступ после героя, по бокам 16px */
+    max-width: 100%;
+    background-color: var(--color-white); /* белый фон, под которым нет изображения */
+  }
+
+  .mobileDescription {
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    color: var(--color-maingreen90);
+  }
+}

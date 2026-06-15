@@ -1,19 +1,44 @@
 import React from 'react';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import ScrollToTop from './components/ScrollToTop';
+
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
-import MainPage from './pages/MainPage'; // Импортируем страницу
+
+import MainPage from './pages/MainPage';
+import KittensPage from './pages/KittensPage';
+import KittenDetailPage from './pages/KittenDetailPage';
+
+// Отдельный компонент, который использует useLocation (находится внутри BrowserRouter)
+const AppContent = () => {
+  const location = useLocation();
+  // Проверяем, страница ли конкретного котёнка
+  const isKittenDetailPage = location.pathname === '/kitten/fred';
+
+  return (
+    <>
+      <ScrollToTop />
+      <div className="app-layout">
+        <Header variant={isKittenDetailPage ? 'secondary' : 'primary'} />
+        <main>
+          <Routes>
+            <Route path="/" element={<MainPage />} />
+            <Route path="/kittens" element={<KittensPage />} />
+            <Route path="/kitten/fred" element={<KittenDetailPage />} />
+            <Route path="*" element={<MainPage />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </>
+  );
+};
 
 function App() {
   return (
-    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', backgroundColor: 'white' }}>
-      <Header variant="primary" activePage="main" />
-      
-      <main style={{ flex: 1, position: 'relative', zIndex: 0}}>
-        <MainPage /> {/* Рендерим страницу */}
-      </main>
-
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <AppContent />
+    </BrowserRouter>
   );
 }
 

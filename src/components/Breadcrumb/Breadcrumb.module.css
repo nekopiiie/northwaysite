@@ -48,3 +48,9 @@
   color: var(--color-maingreen60);
   transform: rotate(90deg); /* Поворачиваем на 90 градусов! */
 }
+
+@media (max-width: 500px) {
+  .container{
+    padding-left: 16px;
+  }
+}

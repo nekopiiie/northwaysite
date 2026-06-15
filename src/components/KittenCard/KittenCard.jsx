@@ -7,7 +7,7 @@ import { ReactComponent as MaleIcon } from '../../assets/icons/Male.svg';
 import { ReactComponent as FemaleIcon } from '../../assets/icons/Female.svg';
 import { ReactComponent as CakeIcon } from '../../assets/icons/Cake.svg';
 
-const KittenCard = ({ image, statusText, statusVariant, name, pedigree, gender, birthday }) => {
+const KittenCard = ({ image, statusText, statusVariant, name, pedigree, gender, birthday, onDetailClick }) => {
   // Логика выбора иконки и текста для пола
   const isMale = gender === 'male';
   const GenderIcon = isMale ? MaleIcon : FemaleIcon;
@@ -34,7 +34,7 @@ const KittenCard = ({ image, statusText, statusVariant, name, pedigree, gender, 
         </div>
       </div>
 
-      <Button variant="primary" title="подробнее" />
+      <Button variant="primary" title="подробнее" onClick={onDetailClick}/>
     </div>
   );
 };

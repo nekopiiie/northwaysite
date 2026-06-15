@@ -60,3 +60,62 @@
   object-fit: cover; /* Подгоняет картинку под рамку, обрезая лишнее */
   display: block;
 }
+
+@media (max-width: 768px) {
+  .modalBox {
+    width: 90vw;
+    max-width: 90vw;
+    padding: 8px;
+  }
+  .imageFrame {
+    height: 60vw; /* адаптивная высота */
+  }
+  .title {
+    font-size: var(--body3-size);
+  }
+}
+
+.navigation {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  pointer-events: none;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.navPrev, .navNext {
+  pointer-events: auto;
+  cursor: pointer;
+  background-color: var(--color-white);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .navPrev, .navNext {
+    width: 32px;
+    height: 32px;
+  }
+
+  .navigation {
+    display: none;
+  }
+
+}
+
+.navPrev svg {
+  transform: rotate(-90deg);
+}
+
+.navNext svg {
+  transform: rotate(90deg);
+}

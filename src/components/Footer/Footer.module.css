@@ -111,6 +111,35 @@
   white-space: nowrap;
 }
 
+.footerLink {
+  font-family: var(--font-body);
+  font-size: var(--body5-size);
+  font-weight: var(--body5-weight);
+  line-height: var(--body5-line-height);
+  color: var(--color-white);
+  text-decoration: none;
+  padding: 4px 20px;
+  border-radius: 50px;
+  background-color: var(--color-maingreen20);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--color-white);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.footerLink:hover {
+  background-color: var(--color-lightgreen20);
+  border-color: var(--color-white70);
+  color: var(--color-white70);
+}
+
+.logoLink {
+  display: inline-flex;
+  line-height: 0;
+  color: var(--color-white) !important;        /* всегда белый */
+  
+}
+
 /* ==========================================
    ЛОКАЛЬНОЕ ИЗМЕНЕНИЕ КНОПКИ 
    ========================================== */
@@ -203,9 +232,13 @@
 
   /* ПРИНУДИТЕЛЬНОЕ УДАЛЕНИЕ */
 
-  /* .circleBtn {
+  .circleBtn {
     display: none !important;
-  } */
+  }
+
+  .mobileScrollBtn {
+  display: none !important;
+}
 
   .desktopScrollBtn {
     display: none;
@@ -235,7 +268,7 @@
     display: none !important;
   }
 
-  .mobileScrollBtn {
+  /* .mobileScrollBtn {
     display: inline-flex !important;
     position: fixed;
     right: 16px;
@@ -249,5 +282,5 @@
   .mobileScrollBtn svg {
     width: 18px !important;
     height: 18px !important;
-  }
+  } */
 }

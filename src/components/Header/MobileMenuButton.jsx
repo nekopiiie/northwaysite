@@ -1,14 +1,16 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import styles from './MobileMenuButton.module.css';
 
-const MobileMenuButton = ({ title, isActive, onClick }) => {
+const MobileMenuButton = ({ title, to, onClick }) => {
   return (
-    <button 
-      className={`${styles.menuBtn} ${isActive ? styles.active : ''}`} 
+    <NavLink
+      to={to}
+      className={({ isActive }) => `${styles.menuBtn} ${isActive ? styles.active : ''}`}
       onClick={onClick}
     >
       {title}
-    </button>
+    </NavLink>
   );
 };
 

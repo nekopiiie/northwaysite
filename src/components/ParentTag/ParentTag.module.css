@@ -1,0 +1,35 @@
+.parentTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 2px 8px 2px 2px;
+  background-color: var(--color-lightgreen);
+  border-radius: 30px;
+  width: fit-content;
+  height: 28px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.avatar {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.text {
+  font-family: var(--font-body);
+  font-size: var(--body3-size);
+  font-weight: var(--body3-weight);
+  color: var(--color-maingreen);
+  line-height: 1;
+}
+
+.parentTag:hover {
+  background-color: var(--color-lightgreen2); /* чуть темнее */
+}
+
+.parentTag:hover .text {
+  color: var(--color-khaki);
+}

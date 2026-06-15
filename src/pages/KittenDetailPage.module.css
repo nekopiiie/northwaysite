@@ -1,0 +1,437 @@
+/* ==========================================
+   ОСНОВНАЯ СТРАНИЦА (фон lightgray)
+   ========================================== */
+.page {
+  background-color: var(--color-lightgray);
+  min-height: 100vh;
+
+  /* СТАРАЯ ВЕРСИЯ */
+  /* padding: 80px clamp(16px, 9vw, 130px) 80px;  */
+
+  padding: 80px 0;
+  box-sizing: border-box;
+}
+
+.inner {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 3vw, 20px);
+  box-sizing: border-box;
+}
+
+/* ==========================================
+   ОСНОВНОЙ БЕЛЫЙ КОНТЕЙНЕР
+   ========================================== */
+.mainContainer {
+  width: 100%;
+
+  background-color: var(--color-white);
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 50px;
+  /* max-width: 1220px;  */
+
+  margin: 0 auto;
+}
+
+.breadcrumb {
+  margin-bottom: 16px; /* добавляем */
+}
+
+/* ==========================================
+   КОНТЕЙНЕР 2: ФОТО + ИНФОРМАЦИЯ
+   ========================================== */
+.infoContainer {
+  display: flex;
+  gap: 20px;
+  border-radius: 20px;
+}
+
+.photoContainer {
+  width: 480px;
+  border-radius: 14px;
+  overflow: hidden;
+  /* box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05), 0 4px 12px rgba(0,0,0,0.1); */
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.detailsContainer {
+  width: 680px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* ==========================================
+   КАРТОЧКА ХАРАКТЕРИСТИК (2.1.1)
+   ========================================== */
+.characteristicsCard {
+  background-color: var(--color-white);
+  padding: 0 20px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.pedigreeTitle {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: var(--h3-size);
+  font-weight: var(--h3-weight);
+  color: var(--color-maingreen);
+}
+
+.attrsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.attrRow {
+  display: flex;
+  align-items: baseline;
+  padding-bottom: 2px;
+  border-bottom: 1px solid var(--color-maingreen10);
+  gap: 30px;
+}
+
+.attrLabel {
+  width: 130px;
+  font-family: var(--font-body);
+  font-size: var(--body3-size);
+  font-weight: var(--body3-weight);
+  color: var(--color-maingreen90);
+}
+
+.attrValue {
+  font-family: var(--font-body);
+  font-size: var(--body4-size);
+  font-weight: var(--body4-weight);
+  color: var(--color-maingreen);
+  flex: 1;
+}
+
+.statusParents {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.detailsGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  /* margin-top: 18px; */
+}
+
+.detailRow {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.detailLabel {
+  width: 130px;
+  font-family: var(--font-body);
+  font-size: var(--body3-size);
+  font-weight: var(--body3-weight);
+  color: var(--color-maingreen90);
+}
+
+.detailValue {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+/* ==========================================
+   ТАБЫ
+   ========================================== */
+.tabsContainer {
+  width: 100%;
+  padding: 0 20px;
+  min-height: 238px;
+}
+
+.tabContent {
+  margin-top: 20px;
+}
+
+.descriptionText {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--color-maingreen90);
+}
+
+.healthContent, .documentsContent {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.healthRow, .docRow {
+  display: flex;
+  gap: 16px;
+}
+
+.healthLabel, .docLabel {
+  width: 120px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-maingreen90);
+  flex-shrink: 0;
+}
+
+.healthText, .docText {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--color-maingreen90);
+  line-height: 1.4;
+}
+
+.galleryContainer {
+  margin-top: 20px;
+}
+
+
+/* ==========================================
+   ГАЛЕРЕЯ (десктоп)
+   ========================================== */
+.galleryContainer {
+  margin-top: 52px; 
+  /* overflow-x: auto;
+  scrollbar-width: none; */
+}
+
+.galleryGrid {
+  display: flex;
+  gap: 20px;
+
+  flex-wrap: wrap; 
+  /* flex-wrap: nowrap; */
+}
+
+.galleryItem {
+  width: 172px;
+  height: 180px;
+  border-radius: 14px;
+
+  flex-shrink: 0;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.galleryItem:hover {
+  transform: scale(1.02);
+}
+
+.galleryImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ==========================================
+   МОБИЛЬНАЯ ГАЛЕРЕЯ (слайдер)
+   ========================================== */
+@media (max-width: 768px) {
+  .galleryContainer {
+    margin-top: 32px;
+  }
+
+  .galleryGrid {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 8px;
+       
+
+    padding-right: 16px;
+    padding-left: 16px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;  /* скрываем скроллбар */
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .galleryGrid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .galleryItem {
+    width: 140px;
+    height: 140px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+  }
+
+  .galleryItem:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 768px){
+  .tabsContainer {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.mainContainer{
+    padding: 16px;
+}
+}
+
+@media (max-width: 1440px) {
+  .page {
+    padding: 20px clamp(16px, 3vw, 20px) 60px;
+    padding-top: 80px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .page {
+    padding: 80px 0 60px;
+  }
+
+  .inner {
+    padding: 0 16px;
+  }
+
+  .infoContainer {
+    flex-direction: column;
+    gap: 30px;
+    padding: 0 0px;
+  }
+  .characteristicsCard {
+    padding: 0 0;
+  }
+  
+  .photoContainer {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .photo {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.tabsContainer {
+  width: 100%;
+  padding: 0 0px;
+  min-height: 164px;
+}
+
+  .detailsContainer {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1200px) {
+    .mainContainer {
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 500px) {
+  .page {
+    padding: 60px 0px 40px;
+  }
+  .inner {
+    padding: 0 0px;
+  }
+
+
+  .mainContainer {
+    padding: 0 0 16px 0;  /* padding bottom 8px, остальные 0 */
+    border-radius: 16px;
+    position: relative;
+    margin-bottom: 24px;
+  }
+
+  .infoContainer {
+    gap: 0;
+    position: relative;
+    padding: 0 0;
+  }
+
+  /* Контейнер информации "налезает" на фото */
+  .detailsContainer {
+    position: relative;
+    margin-top: -20px;      /* наезд на фото */
+    background-color: var(--color-white);
+    border-radius: 16px;
+    padding: 16px 16px 0 16px;
+    z-index: 2;
+  }
+
+  .characteristicsCard {
+    padding: 0;
+  }
+
+  .pedigreeTitle {
+    font-size: var(--h4-size);
+    margin-bottom: 8px;
+  }
+
+  /* Характеристики: лейблы шириной 80px */
+  .attrLabel,
+  .detailLabel {
+    width: 80px;
+    flex-shrink: 0;
+  }
+
+  /* Для родителей лейблы шириной 40px */
+  .detailLabel {
+    width: 52px;
+  }
+
+  .attrRow,
+  .detailRow {
+    gap: 15px;
+  }
+
+  .detailsGroup {
+    margin-top: 12px;
+    gap: 16px;
+  }
+
+  .tabsContainer {
+    padding: 0;
+  }
+
+  .tabContent {
+    margin-top: 16px;
+  }
+
+  .galleryContainer {
+    margin-top: 32px;
+  }
+
+    .galleryGrid {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 8px;
+       
+    margin-left: 16px;
+    padding-right: 16px;
+    padding-left: 16px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;  /* скрываем скроллбар */
+    -webkit-overflow-scrolling: touch;
+  }
+}

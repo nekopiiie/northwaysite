@@ -1,0 +1,27 @@
+.tabsHeaders {
+  display: flex;
+  gap: 20px;
+  border-bottom: 1px solid var(--color-maingreen20);
+  padding-bottom: 0;
+}
+
+.tabButton {
+  background: none;
+  border: none;
+  font-family: var(--font-body);
+  font-size: var(--body3-size);
+  font-weight: var(--body3-weight);
+  color: var(--color-maingreen60);
+  cursor: pointer;
+  padding: 8px 0;
+  transition: color 0.2s;
+}
+
+.tabButton:hover {
+  color: var(--color-maingreen);
+}
+
+.activeTab {
+  color: var(--color-darkgreen);
+  border-bottom: 2px solid var(--color-darkgreen);
+}
