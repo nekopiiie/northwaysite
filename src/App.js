@@ -9,10 +9,10 @@ import MainPage from './pages/MainPage';
 import KittensPage from './pages/KittensPage';
 import KittenDetailPage from './pages/KittenDetailPage';
 
-// Отдельный компонент, который использует useLocation (находится внутри BrowserRouter)
+
 const AppContent = () => {
   const location = useLocation();
-  // Проверяем, страница ли конкретного котёнка
+  
   const isKittenDetailPage = location.pathname === '/kitten/fred';
 
   return (
@@ -36,7 +36,7 @@ const AppContent = () => {
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/northwaysite">
       <AppContent />
     </BrowserRouter>
   );
