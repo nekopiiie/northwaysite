@@ -36,7 +36,7 @@ const AppContent = () => {
 
 function App() {
   return (
-    <BrowserRouter basename="/northwaysite">
+    <BrowserRouter basename="/northwaysite/">
       <AppContent />
     </BrowserRouter>
   );
